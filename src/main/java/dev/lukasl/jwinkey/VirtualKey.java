@@ -261,7 +261,7 @@ public enum VirtualKey {
    * @param keyCode the key code from which the state is to be returned
    * @return the state of the passed key code
    */
-  public static int stateOf(int keyCode) {
+  static int stateOf(int keyCode) {
     return User32.INSTANCE.GetAsyncKeyState(keyCode);
   }
 
@@ -269,7 +269,7 @@ public enum VirtualKey {
    * @param keyCode key code to test
    * @return true whenever user32 marked the passed key code as pressed.
    */
-  public static boolean isPressed(int keyCode) {
+  static boolean isPressed(int keyCode) {
     return (stateOf(keyCode) & MASK_KEY_PRESSED) == MASK_KEY_PRESSED;
   }
 
