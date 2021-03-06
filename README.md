@@ -6,7 +6,7 @@
       src="https://img.shields.io/badge/Made%20with-Java-red"
     />
   </a>
-  <a href="https://www.oracle.com/java/">
+  <a href="https://jitpack.io/#lukasl-dev/jwinkey/v0.0.1">
     <img
       src="https://jitpack.io/v/lukasl-dev/jwinkey.svg"
     />
