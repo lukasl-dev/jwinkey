@@ -6,6 +6,7 @@
 .vscode/
 
 ### Gradle
+.gradle/
 build/
 gradle/*.jar
 
