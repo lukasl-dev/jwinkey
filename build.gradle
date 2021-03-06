@@ -16,10 +16,11 @@
 
 plugins {
     id 'java'
+    id 'maven-publish'
 }
 
 group 'dev.lukasl'
-version 'v0.1'
+version 'v0.0.1'
 
 repositories {
     mavenCentral()
@@ -42,4 +43,26 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+
+publishing {
+    repositories {
+        maven {
+            name = 'mlj'
+            url = 'http://localhost:8080/release'
+            credentials {
+                username 'admin'
+                password '-RzRCyhofW999GTt24JoGFRqGeFWPF-NKRb9'
+            }
+        }
+    }
+    publications {
+        maven(MavenPublication) {
+            groupId = 'dev.lukasl'
+            artifactId = 'jwinkey'
+            version = '0.0.1'
+
+            from components.java
+        }
+    }
 }
