@@ -17,7 +17,6 @@
 
 - [jwinkey](#jwinkey)
   - [What is `jwinkey`?](#what-is-jwinkey)
-  - [Collaboration](#collaboration)
   - [Dependency](#dependency)
     - [Gradle](#gradle)
     - [Maven](#maven)
@@ -34,9 +33,9 @@
 
 `jwinkey` is a windowless/global keyboard and mouse listener for Windows written in Java.
 
----
+**You are a Go developer? Check this out: <https://github.com/daspoet/gowinkey/>**
 
-## Collaboration
+---
 
 ---
 
