@@ -220,7 +220,7 @@ public class UserInputInterceptor extends Thread {
     this.clearAbsentKeys();
     while (this.isAlive()) {
       this.keys.forEach((keyCode) -> {
-        var pressed = VirtualKey.isPressed(keyCode);
+        boolean pressed = VirtualKey.isPressed(keyCode);
         if (!pressed && this.isPressed(keyCode)) {
           this.release(keyCode);
           return;
