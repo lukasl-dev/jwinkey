@@ -6,7 +6,7 @@
       src="https://img.shields.io/badge/Made%20with-Java-red"
     />
   </a>
-  <a href="https://jitpack.io/#lukasl-dev/jwinkey/1.0.0">
+  <a href="https://jitpack.io/#lukasl-dev/jwinkey/1.0.2">
     <img
       src="https://jitpack.io/v/lukasl-dev/jwinkey.svg"
     />
@@ -41,7 +41,7 @@
 
 ### Gradle
 
-Add the [JitPack](https://jitpack.io/#lukasl-dev/jwinkey/1.0.0) repository to your build file.
+Add the [JitPack](https://jitpack.io/#lukasl-dev/jwinkey/1.0.2) repository to your build file.
 
 ```groovy
 repositories {
@@ -53,13 +53,13 @@ Add the dependency to your build file.
 
 ```groovy
 dependencies {
-    implementation 'com.github.lukasl-dev:jwinkey:1.0.0'
+    implementation 'com.github.lukasl-dev:jwinkey:1.0.2'
 }
 ```
 
 ### Maven
 
-Add the [JitPack](https://jitpack.io/#lukasl-dev/jwinkey/1.0.0) repository to your build file.
+Add the [JitPack](https://jitpack.io/#lukasl-dev/jwinkey/1.0.2) repository to your build file.
 
 ```xml
 
@@ -79,7 +79,7 @@ Add the dependency to your build file.
     <dependency>
         <groupId>com.github.lukasl-dev</groupId>
         <artifactId>jwinkey</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.2</version>
     </dependency>
 </dependencies>
 ```
