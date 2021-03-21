@@ -6,7 +6,7 @@
       src="https://img.shields.io/badge/Made%20with-Java-red"
     />
   </a>
-  <a href="https://jitpack.io/#lukasl-dev/jwinkey/1.0.2">
+  <a href="https://jitpack.io/#lukasl-dev/jwinkey/1.0.3">
     <img
       src="https://jitpack.io/v/lukasl-dev/jwinkey.svg"
     />
@@ -16,16 +16,11 @@
 <br>
 
 - [jwinkey](#jwinkey)
-    - [What is `jwinkey`?](#what-is-jwinkey)
-    - [Dependency](#dependency)
-        - [Gradle](#gradle)
-        - [Maven](#maven)
-    - [Getting started](#getting-started)
-        - [Create a new UserInputInterceptor](#create-a-new-userinputinterceptor)
-        - [Register Keys](#register-keys)
-        - [Register Listeners](#register-listeners)
-        - [Start listening](#start-listening)
-    - [Full example](#full-example)
+  - [What is `jwinkey`?](#what-is-jwinkey)
+  - [Dependency](#dependency)
+    - [Gradle](#gradle)
+    - [Maven](#maven)
+  - [Getting started](#getting-started)
 
 ---
 
@@ -41,7 +36,7 @@
 
 ### Gradle
 
-Add the [JitPack](https://jitpack.io/#lukasl-dev/jwinkey/1.0.2) repository to your build file.
+Add the [JitPack](https://jitpack.io/#lukasl-dev/jwinkey/1.0.3) repository to your build file.
 
 ```groovy
 repositories {
@@ -53,13 +48,13 @@ Add the dependency to your build file.
 
 ```groovy
 dependencies {
-    implementation 'com.github.lukasl-dev:jwinkey:1.0.2'
+    implementation 'com.github.lukasl-dev:jwinkey:1.0.3'
 }
 ```
 
 ### Maven
 
-Add the [JitPack](https://jitpack.io/#lukasl-dev/jwinkey/1.0.2) repository to your build file.
+Add the [JitPack](https://jitpack.io/#lukasl-dev/jwinkey/1.0.3) repository to your build file.
 
 ```xml
 
@@ -79,7 +74,7 @@ Add the dependency to your build file.
     <dependency>
         <groupId>com.github.lukasl-dev</groupId>
         <artifactId>jwinkey</artifactId>
-        <version>1.0.2</version>
+        <version>1.0.3</version>
     </dependency>
 </dependencies>
 ```
