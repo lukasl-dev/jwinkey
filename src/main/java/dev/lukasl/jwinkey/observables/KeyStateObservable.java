@@ -59,8 +59,8 @@ public class KeyStateObservable extends Observable<KeyStateUpdate> {
     return this;
   }
 
-  public boolean isPressed(int virtualKeyCode) {
-    return this.pressed.contains(virtualKeyCode);
+  public boolean isPressed(Integer... virtualKeyCodes) {
+    return Arrays.stream(virtualKeyCodes).allMatch(this.pressed::contains);
   }
 
   private void press(int virtualKeyCode) {
