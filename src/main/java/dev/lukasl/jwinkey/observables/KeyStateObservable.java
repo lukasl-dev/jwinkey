@@ -125,4 +125,8 @@ public class KeyStateObservable extends Observable<KeyStateUpdate> {
   public static KeyStateObservable of(Integer... virtualKeyCodes) {
     return delayed(10, virtualKeyCodes);
   }
+
+  public static KeyStateObservable of(VirtualKey... virtualKeys) {
+    return of(Arrays.stream(virtualKeys).map(VirtualKey::getVirtualKeyCode).toArray(Integer[]::new));
+  }
 }
