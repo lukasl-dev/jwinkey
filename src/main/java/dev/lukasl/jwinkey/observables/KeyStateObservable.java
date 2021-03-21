@@ -18,6 +18,7 @@ package dev.lukasl.jwinkey.observables;
 
 import dev.lukasl.jwinkey.components.KeyStateUpdate;
 import dev.lukasl.jwinkey.enums.KeyState;
+import dev.lukasl.jwinkey.enums.VirtualKey;
 import io.reactivex.rxjava3.annotations.NonNull;
 import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.core.Observer;
@@ -61,6 +62,10 @@ public class KeyStateObservable extends Observable<KeyStateUpdate> {
 
   public boolean isPressed(Integer... virtualKeyCodes) {
     return Arrays.stream(virtualKeyCodes).allMatch(this.pressed::contains);
+  }
+
+  public boolean isPressed(VirtualKey... virtualKeys) {
+    return this.isPressed(Arrays.stream(virtualKeys).map(VirtualKey::getVirtualKeyCode).toArray(Integer[]::new));
   }
 
   private void press(int virtualKeyCode) {
