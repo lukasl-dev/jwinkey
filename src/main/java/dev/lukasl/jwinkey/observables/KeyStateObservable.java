@@ -25,10 +25,7 @@ import io.reactivex.rxjava3.core.Observer;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -74,7 +71,7 @@ public class KeyStateObservable extends Observable<KeyStateUpdate> {
   }
 
   public Set<Integer> getPressed() {
-    return Set.copyOf(this.pressed);
+    return new HashSet<>(this.pressed);
   }
 
   public Set<Integer> getReleased() {
