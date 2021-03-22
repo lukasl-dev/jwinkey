@@ -248,4 +248,8 @@ public enum VirtualKey {
       .map(Optional::get)
       .collect(Collectors.toSet());
   }
+
+  public static Set<VirtualKey> fromCodes(Integer... virtualKeyCodes) {
+    return fromCodes(Arrays.asList(virtualKeyCodes));
+  }
 }
