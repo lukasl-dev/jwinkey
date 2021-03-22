@@ -32,6 +32,7 @@ import java.util.Set;
 import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.stream.Collectors;
 
 @RequiredArgsConstructor(access = AccessLevel.PROTECTED)
 public class KeyStateObservable extends Observable<KeyStateUpdate> {
@@ -74,6 +75,13 @@ public class KeyStateObservable extends Observable<KeyStateUpdate> {
 
   public Set<Integer> getPressed() {
     return Set.copyOf(this.pressed);
+  }
+
+  public Set<Integer> getReleased() {
+    return this.registered
+      .stream()
+      .filter((keyCode) -> !this.pressed.contains(keyCode))
+      .collect(Collectors.toSet());
   }
 
   private void press(int virtualKeyCode) {
