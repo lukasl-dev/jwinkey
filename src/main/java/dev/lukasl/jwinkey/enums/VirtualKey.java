@@ -21,7 +21,10 @@ import lombok.Getter;
 import lombok.ToString;
 
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Optional;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @Getter
 @ToString
@@ -236,5 +239,13 @@ public enum VirtualKey {
     return Arrays.stream(values())
       .filter((virtualKey) -> virtualKey.getVirtualKeyCode() == virtualKeyCode)
       .findFirst();
+  }
+
+  public static Set<VirtualKey> fromCodes(Collection<Integer> virtualKeyCodes) {
+    return virtualKeyCodes.stream()
+      .map(VirtualKey::fromCode)
+      .filter(Optional::isPresent)
+      .map(Optional::get)
+      .collect(Collectors.toSet());
   }
 }
