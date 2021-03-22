@@ -72,6 +72,10 @@ public class KeyStateObservable extends Observable<KeyStateUpdate> {
     return this.isPressed(Arrays.stream(virtualKeys).map(VirtualKey::getVirtualKeyCode).toArray(Integer[]::new));
   }
 
+  public Set<Integer> getPressed() {
+    return Set.copyOf(this.pressed);
+  }
+
   private void press(int virtualKeyCode) {
     this.pressed.add(virtualKeyCode);
   }
