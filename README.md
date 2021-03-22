@@ -11,6 +11,11 @@
       src="https://jitpack.io/v/lukasl-dev/jwinkey.svg"
     />
   </a>
+  <a href="https://jitpack.io/#lukasl-dev/jwinkey/1.0.6">
+    <img
+      src="https://jitci.com/gh/lukasl-dev/jwinkey/svg"
+    />
+  </a>
 </div>
 
 <br>
