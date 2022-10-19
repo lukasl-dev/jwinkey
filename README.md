@@ -13,7 +13,7 @@
         height="30"
     />
   </a>
-  <a href="https://micartey.github.io/jwinkey/documentation" target="_blank">
+  <a href="https://micartey.github.io/jwinkey/docs" target="_blank">
     <img
         src="https://img.shields.io/badge/javadoc-reference-5272B4.svg?style=for-the-badge"
         height="30"
