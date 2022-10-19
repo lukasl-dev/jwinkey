@@ -3,89 +3,66 @@
 <div align="center">
   <a href="https://www.oracle.com/java/">
     <img
-      src="https://img.shields.io/badge/Made%20with-Java-red"
+        src="https://img.shields.io/badge/Made%20with-Java-red?style=for-the-badge"
+        height="30"
     />
   </a>
   <a href="https://jitpack.io/#lukasl-dev/jwinkey/1.0.6">
     <img
-      src="https://jitpack.io/v/lukasl-dev/jwinkey.svg"
+        src="https://img.shields.io/badge/Build-Jitpack-lgreen?style=for-the-badge"
+        height="30"
     />
   </a>
-  <a href="https://jitpack.io/#lukasl-dev/jwinkey/1.0.6">
+  <a href="https://micartey.github.io/jwinkey/documentation" target="_blank">
     <img
-      src="https://jitci.com/gh/lukasl-dev/jwinkey/svg"
+        src="https://img.shields.io/badge/javadoc-reference-5272B4.svg?style=for-the-badge"
+        height="30"
     />
-  </a>
+    </a>
 </div>
 
 <br>
 
-- [jwinkey](#jwinkey)
-  - [What is `jwinkey`?](#what-is-jwinkey)
-  - [Dependency](#dependency)
-    - [Gradle](#gradle)
-    - [Maven](#maven)
-  - [Getting started](#getting-started)
+<p align="center">
+  <a href="#-introduction">Introduction</a> |
+  <a href="#-terms-of-use">Getting started</a> |
+  <a href="https://github.com/lukasl-dev/jwinkey/issues">Troubleshooting</a>
+</p>
 
----
+## 📚 Introduction
 
-## What is `jwinkey`?
-
-`jwinkey` is a windowless/global keyboard and mouse listener for Windows written in Java.
+`jwinkey` is a windowless/global keyboard and mouse listener for Windows written in Java. It works by using the windows api in order to work even if the window isn't focused or hidden.
 
 **You are a Go developer? Check this out: <https://github.com/daspoet/gowinkey/>**
 
----
+## 📝 Getting started
 
-## Dependency
+To use `jwinkey` with Gradle or Maven, check out the documentation of jitpack [[here]](https://jitpack.io/#lukasl-dev/jwinkey/)
 
-### Gradle
+### Create a keyboard observer
 
-Add the [JitPack](https://jitpack.io/#lukasl-dev/jwinkey/1.0.6) repository to your build file.
+In order to observe for keyboard interactions, you need to create a `KeyStateObservable` with an array of `VirtualKey` which contains all keys that the given observer will look for.
 
-```groovy
-repositories {
-    maven { url = 'https://jitpack.io' }
-}
+```java
+import dev.lukasl.jwinkey.enums.VirtualKey;
+import dev.lukasl.jwinkey.observables.KeyStateObservable;
+
+KeyStateObservable observer = KeyStateObservable.of(Arrays.asList(
+    VirtualKey.VK_SHIFT,
+    VirtualKey.VK_LEFT_SHIFT,
+    VirtualKey.VK_RIGHT_SHIFT
+));
 ```
 
-Add the dependency to your build file.
+### Do on changes
 
-```groovy
-dependencies {
-    implementation 'com.github.lukasl-dev:jwinkey:1.0.6'
-}
+After creating the observer in the step above, you can append different consumers to the observer which will be invoked once changes occur.
+
+```java
+observer.subscribe(keyState -> {
+    if (keyState.getKeyState().equals(KeyState.PRESSED))
+        return;
+
+    System.out.println("Shift released");
+})
 ```
-
-### Maven
-
-Add the [JitPack](https://jitpack.io/#lukasl-dev/jwinkey/1.0.6) repository to your build file.
-
-```xml
-
-<repositories>
-    <repository>
-        <id>jitpack.io</id>
-        <url>https://jitpack.io</url>
-    </repository>
-</repositories>
-```
-
-Add the dependency to your build file.
-
-```xml
-
-<dependencies>
-    <dependency>
-        <groupId>com.github.lukasl-dev</groupId>
-        <artifactId>jwinkey</artifactId>
-        <version>1.0.6</version>
-    </dependency>
-</dependencies>
-```
-
----
-
-## Getting started
-
-Coming soon...
